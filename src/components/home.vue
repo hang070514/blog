@@ -8,7 +8,7 @@
               <div class="desc">
                   <span>喜欢游泳、跑步</span>
                   <span>爱读书，对历史很感兴趣</span>
-                  <span>爱自由，喜欢随遇而安</span>
+                  <span>喜欢看综艺节目</span>
               </div>
               <p class="line"></p>
           </div>
@@ -31,7 +31,7 @@
               你未曾落后，也从未领先。<br/>
               在命运为你安排的属于自己的时区里，一切都非常准时。
               </marquee>
-          
+
           </div>
       </div>
     </div>
@@ -49,7 +49,7 @@ export default {
     }
   },
   created:function(){
- 
+
   }
 }
 </script>
@@ -65,15 +65,15 @@ export default {
 
   @keyframes flash{
 
-      0% { opacity: 0; } 
+      0% { opacity: 0; }
      5% { opacity: 0; }
   17% { opacity: 1; -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-    19% { opacity: 1; -webkit-transform: rotate(98deg); transform: rotate(98deg); } 
-    21% { opacity: 1; -webkit-transform: rotate(86deg); transform: rotate(86deg); } 
+    19% { opacity: 1; -webkit-transform: rotate(98deg); transform: rotate(98deg); }
+    21% { opacity: 1; -webkit-transform: rotate(86deg); transform: rotate(86deg); }
   23% { opacity: 1; -webkit-transform: translateY(85px) rotate(83deg); transform: translateY(85px) rotate(83deg); }
-   45% { opacity: 0; -webkit-transform: translateY(170px) rotate(80deg); transform: translateY(170px) rotate(80deg);}   
+   45% { opacity: 0; -webkit-transform: translateY(170px) rotate(80deg); transform: translateY(170px) rotate(80deg);}
    80% { opacity: 0;}
-  100% { opacity: 0;} 
+  100% { opacity: 0;}
   }
 
   #left .desc span{

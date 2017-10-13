@@ -16,7 +16,7 @@
 
           <div class="collapse navbar-collapse navbar-right" id="example-navbar-collapse">
                 <ul class="nav navbar-nav">
-                     <li class="active"><router-link to='/home'>主页</router-link></li>
+                     <li><router-link to='/'>主页</router-link></li>
                      <li><router-link to='/picture'>图片欣赏</router-link></li>
                      <li><router-link to='/project'>项目展示</router-link></li>
                      <li><router-link to='/introduce'>个人介绍</router-link></li>
