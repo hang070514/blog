@@ -131,7 +131,7 @@ export default {
               share.style.left = share.offsetLeft + speed + 'px';
             }
         },100);
-    } 
+    }
 
   }
 }
@@ -147,8 +147,7 @@ export default {
 
   #app .content{
     -text-align: center;
-    width: 1120px;
-    height: 300px;
+    width: 1200px;
     margin:0 auto;
     margin-top: 150px;
   }
