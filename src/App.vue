@@ -32,6 +32,10 @@
               <img src="static/qin.png">
              <audio src="static/Sunshine.mp3" autoplay="autoplay" id="audio"></audio>
       </span>
+
+      <div id="share" @mouseover="startMove(0,5)"  @mouseout="startMove(-60,-5)">
+        <span>分享</span>
+      </div>
     </div>
 
   </div>
@@ -44,6 +48,7 @@ export default {
     return {
       move:true,
       timer:null,
+      timer1:null,
       dirX:1,
       dirY:1,
       posX:0,
@@ -111,7 +116,23 @@ export default {
           clearInterval(this.timer);
           audios.pause();
         }
-    }
+    },
+
+    //分享运动
+    startMove:function(distance,speed){
+
+        var share = document.getElementById('share');
+        clearInterval(this.timer1);
+        this.timer1=setInterval(function(){
+            if(share.offsetLeft == distance){
+                //share.style.left = distance+'px';
+                clearInterval(this.timer1);
+            }else{
+              share.style.left = share.offsetLeft + speed + 'px';
+            }
+        },100);
+    } 
+
   }
 }
 </script>
@@ -146,5 +167,21 @@ export default {
 
  #bg_music:hover{
      cursor:pointer;
+ }
+ #share{
+    position: absolute;
+    width: 60px;
+    height: 120px;
+    left:-60px;
+    background-color: transparent;
+ }
+ #share span{
+    display: block;
+    position: absolute;
+    width: 20px;
+    left: 60px;
+    font-size: 20px;
+    top:30px;
+    background-color: yellow;
  }
 </style>
