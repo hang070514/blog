@@ -13,7 +13,7 @@
 </template>
 <script type="text/javascript">
 	export default{
-		created:function(){
+/*		created:function(){
 				//var mBox = document.getElementById('out');
 				var divs = document.getElementById('out').getElementsByTagName('img');
 				console.log(divs.length);
@@ -25,7 +25,7 @@
 				}
 				for(var i = 0; i < divs.length; i++){
 					divs[i].style.position = 'absolute';
-					
+
 					divs[i].onmouseover=function(){
 						this.style.zIndex = zIndex;
 						zIndex++;
@@ -77,7 +77,7 @@
 	                return getComputedStyle(obj)[attr];
 	            }
 			}
-		}
+		}*/
 	}
 </script>
 <style type="text/css">

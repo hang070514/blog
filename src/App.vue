@@ -58,8 +58,8 @@ export default {
   created:function(){
 
     //alert($('#bg_music').width());
-    console.log('width===='+$('#bg_music').width());
-    console.log('height===='+$('#bg_music').height())
+    //console.log('width===='+$('#bg_music').width());
+    //console.log('height===='+$('#bg_music').height())
     var bg = document.getElementById('bg_music');
    // console.log('h===='+bg.offsetHeight);
     var _this = this;
