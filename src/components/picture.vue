@@ -20,14 +20,42 @@ export default {
     return {
       timer:null,
       width:0,
+      height:0,
       m:0,
-      len:0
+      len:0,
+      imgArr:[]
     }
   },
   mounted:function(){
+    this.init();
     this.play();
   },
   methods:{
+      resize(){
+        var _this = this;
+        //console.log($(window).width());
+        this.imgArr = $('.list').find('img');
+        this.m = $(window).width()<768?4:1;
+        this.height = $(window).width()<768?157:313;
+        $('.picture').height(this.height);
+        $('.picture .list').height(this.height);
+        //console.log(this);
+        this.imgArr.each(function () {
+          //console.log(this);
+          $(this).attr('src','../../static/banner_'+_this.m+'.jpg')
+          _this.m++;
+        })
+      },
+      init(){
+        //console.log(this);
+        var _this = this;
+        $(window).on('resize',function () {
+          _this.resize();
+
+        })
+        //console.log('init方法');
+      },
+
       play(){
         this.width = $('.list').width();
         this.len = $('.list li').length;
@@ -35,7 +63,7 @@ export default {
         this.timer = setInterval(this.loop,3000);
       },
       loop:function () {
-        if(this.m>2){
+        if(this.m==3 ){
           this.m=0;
         }
         $('.list').css('left',-this.m*this.width);

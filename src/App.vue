@@ -163,6 +163,7 @@ export default {
     display: block;
     height: 209px;
     width: 103px;
+   z-index: 100;
  }
 
  #bg_music:hover{
