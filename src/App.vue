@@ -5,7 +5,7 @@
       <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
-                data-target="#example-navbar-collapse">
+                data-target="#navbar-collapse">
               <span class="sr-only">切换导航</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -14,7 +14,8 @@
             <a class="navbar-brand">hang</a>
           </div>
 
-          <div class="collapse navbar-collapse navbar-right" id="example-navbar-collapse">
+         <!-- <div class="collapse navbar-collapse navbar-right" id="example-navbar-collapse">-->
+          <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                      <li><router-link to='/'>主页</router-link></li>
                      <li><router-link to='/picture'>图片欣赏</router-link></li>
@@ -25,19 +26,18 @@
           </div>
 
       </div>
-      <div class="content">
-             <router-view></router-view>
-      </div>
+
       <span id="bg_music" v-on:click="stop">
               <img src="static/qin.png">
              <audio src="static/Sunshine.mp3" autoplay="autoplay" id="audio"></audio>
       </span>
-
-      <div id="share" @mouseover="startMove(0,5)"  @mouseout="startMove(-60,-5)">
-        <span>分享</span>
-      </div>
     </div>
-
+    <div class="content">
+      <router-view></router-view>
+    </div>
+    <div id="share" @mouseover="startMove(0,5)"  @mouseout="startMove(-60,-5)">
+      <span>分享</span>
+    </div>
   </div>
 </template>
 
@@ -142,7 +142,6 @@ export default {
   #app .navbar-default{
     background: rgba(255,255,255,.3);
     border-width: 0px;
-    position: relative;
   }
 
   #app .content{
