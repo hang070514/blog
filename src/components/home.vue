@@ -55,6 +55,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  #left{
+    height: 300px;
+  }
   #left .desc {
     font-size: 19px;
     color: #ff7d7c;

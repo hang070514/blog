@@ -1,7 +1,7 @@
 <template>
 	<div class="introduce">
 		<h1 class="title">生命永恒的香味</h1>
-		<div class="col-md-12 text">
+		<div class="col-md-12 col-sm-12 col-xs-12 text">
 			{{showText}}
 		</div>
 	</div>

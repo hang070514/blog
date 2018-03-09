@@ -146,13 +146,15 @@ export default {
   }
 
   #app .content{
-    -text-align: center;
-    width: 1200px;
-    margin:0 auto;
-    margin-top: 150px;
+     /*margin-top: 150px;*/
   }
 
-
+  @media screen and (min-width: 1200px){
+    #app .content {
+      width: 1200px;
+      margin: 150px auto 0px;
+    }
+  }
  #app .container .header ul{
     -margin-top: 20px;
  }

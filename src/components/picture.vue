@@ -1,12 +1,12 @@
 <template>
   <div class="picture">
     <ul class="list">
-      <li class="mli"><img src="../../static/banner_1.jpg"></li>
-      <li><img src="../../static/banner_2.jpg"></li>
-      <li><img src="../../static/banner_3.jpg"></li>
+      <li><img class="img-responsive center-block" src="../../static/banner_1.jpg"></li>
+      <li><img class="img-responsive center-block" src="../../static/banner_2.jpg"></li>
+      <li><img class="img-responsive center-block" src="../../static/banner_3.jpg"></li>
     </ul>
     <div class="row desc">
-      <span v-for="(k,i) in new Array(3)" @click="dian()">{{i+1}}</span>
+      <span v-for="(k,index) in new Array(3)" @click="dian(index)"></span>
     </div>
   </div>
 </template>
@@ -18,29 +18,33 @@ export default {
   name: 'picture',
   data () {
     return {
-      msg: 'a',
+      timer:null,
+      width:0,
+      m:0,
+      len:0
     }
   },
   mounted:function(){
-    var m = 0;
-    var len = $('.list li').length;
-    var width = $('.list').width();
-    //console.log('len===='+len);
-    //设置ul的宽度
-    $('.list').width(width*len);
-
-    setInterval(function () {
-      if(m>2){
-        m=0;
-      }
-      $('.list').css('left',-m*width);
-      m++;
-    },3000);
-
+    this.play();
   },
   methods:{
-      dian:function(){
-        console.log($(this).index);
+      play(){
+        this.width = $('.list').width();
+        this.len = $('.list li').length;
+        $('.list').width(this.width * this.len);
+        this.timer = setInterval(this.loop,3000);
+      },
+      loop:function () {
+        if(this.m>2){
+          this.m=0;
+        }
+        $('.list').css('left',-this.m*this.width);
+        $('.desc span').eq(this.m).addClass('active').siblings().removeClass('active');
+        this.m++;
+      },
+      dian:function(i){
+        this.m = i;
+        this.loop();
       }
   }
 
@@ -51,10 +55,14 @@ export default {
 <style scoped>
     .picture {
       position: relative;
-      width: 1200px;
       height: 313px;
       overflow: hidden;
   }
+   @media  screen and (min-width: 1200px){
+     .picture{
+       width: 1200px;
+     }
+   }
   .list{
     position: absolute;
     width: 1200px;
@@ -85,6 +93,7 @@ export default {
     border-radius:10px;
     margin-left: 3px;
     background-color: #fff;
+    cursor: pointer;
   }
   .desc .active{
     background-color: red;
