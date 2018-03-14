@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
     <div class="navbar navbar-default" role="navigation">
       <div class="container">
           <div class="navbar-header">
@@ -14,7 +13,6 @@
             <a class="navbar-brand">hang</a>
           </div>
 
-         <!-- <div class="collapse navbar-collapse navbar-right" id="example-navbar-collapse">-->
           <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                      <li><router-link to='/'>主页</router-link></li>
@@ -57,14 +55,8 @@ export default {
   },
   created:function(){
 
-    //alert($('#bg_music').width());
-    //console.log('width===='+$('#bg_music').width());
-    //console.log('height===='+$('#bg_music').height())
     var bg = document.getElementById('bg_music');
-   // console.log('h===='+bg.offsetHeight);
     var _this = this;
-/*    console.log('width===='+document.body.clientWidth);
-    console.log('height===='+document.body.clientHeight);*/
 
     if(this.move){
         //alert(12);

@@ -29,21 +29,22 @@ export default {
   mounted:function(){
     this.init();
     this.play();
+    this.resize();
   },
   methods:{
       resize(){
         var _this = this;
-        //console.log($(window).width());
+        console.log($(window).width());
         this.imgArr = $('.list').find('img');
         this.m = $(window).width()<768?4:1;
         this.height = $(window).width()<768?157:313;
         $('.picture').height(this.height);
         $('.picture .list').height(this.height);
-        //console.log(this);
         this.imgArr.each(function () {
           //console.log(this);
           $(this).attr('src','../../static/banner_'+_this.m+'.jpg')
           _this.m++;
+          console.log('m==='+_this.m);
         })
       },
       init(){
@@ -51,9 +52,8 @@ export default {
         var _this = this;
         $(window).on('resize',function () {
           _this.resize();
-
         })
-        //console.log('init方法');
+        $('.desc span').eq(0).addClass('active')
       },
 
       play(){
@@ -63,10 +63,12 @@ export default {
         this.timer = setInterval(this.loop,3000);
       },
       loop:function () {
-        if(this.m==3 ){
-          this.m=0;
+
+        if(this.m > 6 || this.m >2){
+          this.m = 0;
         }
-        $('.list').css('left',-this.m*this.width);
+
+        $('.list').css('left',-this.m*$('.list li').width());
         $('.desc span').eq(this.m).addClass('active').siblings().removeClass('active');
         this.m++;
       },
