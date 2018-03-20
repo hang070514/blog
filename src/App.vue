@@ -15,7 +15,7 @@
 
           <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
                 <ul class="nav navbar-nav">
-                     <li><router-link to='/'>主页</router-link></li>
+                     <li class="active"><router-link to='/'>主页</router-link></li>
                      <li><router-link to='/picture'>图片欣赏</router-link></li>
                      <li><router-link to='/project'>项目展示</router-link></li>
                      <li><router-link to='/introduce'>个人介绍</router-link></li>
@@ -77,8 +77,15 @@ export default {
             }
         },40);
     }
-  },
+    console.log('created   method');
+    console.log('created==='+$('#navbar-collapse li').eq(0).text());
 
+  },
+  mounted:function () {
+    this.toggleNav();
+    console.log('mounted   method');
+    console.log('mounted===='+$('#navbar-collapse li').eq(0).text());
+  },
   methods:{
     //琴停止(开始)运动  音乐停止（开始）
     stop:function(){
@@ -123,6 +130,14 @@ export default {
               share.style.left = share.offsetLeft + speed + 'px';
             }
         },100);
+    },
+    //导航栏切换
+    toggleNav:function () {
+      console.log('执行了吗');
+      $('#navbar-collapse li').on('click',function () {
+          //console.log($(this).find('a').text());
+        $(this).addClass('active').siblings().removeClass('active');
+      })
     }
 
   }

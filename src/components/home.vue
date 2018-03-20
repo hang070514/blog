@@ -140,5 +140,6 @@
   .scrollText {
     font-size: 16px;
     text-align: center;
+    color: #ca7d73;
   }
 </style>

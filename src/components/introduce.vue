@@ -2,7 +2,7 @@
 	<div class="introduce">
 		<h1 class="title">生命永恒的香味</h1>
 		<div class="col-md-12 col-sm-12 col-xs-12 text">
-			{{showText}}
+			<!--{{showText}}-->
 		</div>
 	</div>
 </template>
@@ -12,7 +12,10 @@
 		data(){
 			return{
 				text:'把读书作为生活的常态，是生命最美好的习惯。从春花读到秋月，从夜雪初晴到朝暾甫上。在春秋默然交替里，在岁月寂然运行中，心灵因书，时而大恸，时而微喜，时而寒霜彻骨，时而微风拂面，一波三折，百转千回，在起起伏伏中，或悟人生至理，或叹人世苍凉，都不失为人生之快事。即便从青春读到暮年, 从黑发读到白首, 也自痛快淋漓, 无怨无悔。',
-				showText:''
+				showText:'',
+        color1:0,
+        color2:0,
+        color3:0
 			}
 		},
 		created:function(){
@@ -22,12 +25,28 @@
 
 			var timer = setInterval(function(){
 				if(strs.split('').length >= index){
-					_this.showText=_this.text.substring(0,index++);
+          this.color1 = parseInt(Math.random()*255);
+          this.color2 = parseInt(Math.random()*255);
+          this.color3 = parseInt(Math.random()*255);
+          console.log($('.text').text().substring(index,index+1));
+
+          var mSpan = '<span style="color: rgb('+this.color1+','+this.color2+','+this.color3+')">'+_this.text.substring(index,index+1)+'</span>';
+          index++;
+          //console.log(index);
+          $('.text').append(mSpan);
 				}else{
 					clearInterval(timer);
 				}
 			},200);
-		}
+			//this.test();
+		},
+    methods:{
+        test(){
+          //console.log('我是测试方法');
+          this.color1 = Math.random(0,1)+255;
+          console.log(this.color1);
+      }
+    }
 	}
 </script>
 
