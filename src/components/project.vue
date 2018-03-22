@@ -1,83 +1,18 @@
 <template>
-	<div id="out">
-		<div><img src="../assets/login.png"></div>
-		<div><img src="../assets/login.png"></div>
-		<div><img src="../assets/login.png"></div>
-		<div><img src="../assets/login.png"></div>
-		<div><img src="../assets/login.png"></div>
-		<div><img src="../assets/login.png"></div>
-		<div><img src="../assets/login.png"></div>
-		<div><img src="../assets/login.png"></div>
-		<div><img src="../assets/login.png"></div>
-	</div>
+  <div class="container out">
+    <div class="inner">
+      <img class="center-block" src="../../static/hua.png" alt="华容道">
+    </div>
+
+    <a href="https://www.baidu.com">
+      <span>数字华容道是我在最强大脑上看到的一款益智小游戏，它的玩法很简单，就是把8个随机打乱的数字，
+    重新排列，赶快试一试吧！</span>
+    </a>
+  </div>
 </template>
 <script type="text/javascript">
 	export default{
-/*		created:function(){
-				//var mBox = document.getElementById('out');
-				var divs = document.getElementById('out').getElementsByTagName('img');
-				console.log(divs.length);
-				var timer = null;
-				var zIndex = 2;
-				for(var i = 0; i < divs.length; i++){
-					divs[i].style.left = divs[i].offsetLeft + "px";
-			        divs[i].style.top = divs[i].offsetTop + "px";
-				}
-				for(var i = 0; i < divs.length; i++){
-					divs[i].style.position = 'absolute';
 
-					divs[i].onmouseover=function(){
-						this.style.zIndex = zIndex;
-						zIndex++;
-						startMove(this,{width:200,height:200,marginLeft:-50,marginTop:-50});
-					}
-					divs[i].onmouseout=function(){
-						startMove(this,{width:100,height:100,marginLeft:0,marginTop:0});
-					}
-				}
-		},
-		methods:{
-			startMove:function(){
-			clearInterval(obj.timer);
-            obj.timer=setInterval(function(){
-                var bStop=true;//假设所有值都已完成
-                for(var attr in json){
-                    var init=0;
-
-                    if(attr=='opacity'){
-                        init=parseInt(this.getStyle(obj,attr)*100);
-                    }else{
-                        init=parseInt(this.getStyle(obj,attr));//100
-                    }
-                    var speed=(json[attr]-init)/7;  //500-100
-                    speed=speed>0?Math.ceil(speed):Math.floor(speed);
-                    if(init!=json[attr]){    //不是所有都完成
-                        bStop=false;
-                    }
-                    if(attr=='opacity'){
-                        obj.style[attr]=(init+speed)/100;
-
-                    }else{
-                        obj.style[attr]=init+speed+'px';
-                    }
-
-                }
-                if(bStop){
-                    clearInterval(obj.timer);
-                    if(fn){
-                        fn();
-                    }
-                }
-            },30)
-			},
-			getStyle:function(obj,attr){
-				if(obj.currentStyle){
-	                return obj.currentStyle[attr];
-	            }else{
-	                return getComputedStyle(obj)[attr];
-	            }
-			}
-		}*/
 	}
 </script>
 <style type="text/css">
@@ -87,12 +22,73 @@
 			left: 300px;
 			top:200px;
 		}
-		#out div{
-			z-index: 1;
-			width: 120px;
-			height: 120px;
-			float: left;
-			margin-right: 5px;
-			margin-bottom: 5px;
+		.out{
+      position: relative;
 		}
+    .out .inner{
+      position: relative;
+      border: 1px solid #00ff00;
+      width: 376px;
+      margin: 0 auto;
+    }
+    .out .inner::before,.out .inner::after{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 396px;
+      height: 447px;
+      top:-10px;
+      left:-10px;
+      box-sizing: border-box;
+      border: 2px solid #00ff00;
+      clip:rect(200px 200px 427px 0px);
+      animation: flash 6s infinite linear;
+    }
+
+    .out .inner::before{
+      animation-delay: -3s;
+    }
+
+    @keyframes flash {
+      0%{
+        clip: rect(0px,396px,447px,386px);
+      }
+      25%{
+        clip: rect(0px,396px,10px,0px);
+      }
+      50%{
+        clip: rect(0px,10px,447px,0px);
+      }
+      75%{
+        clip: rect(447px,396px,447px,0px);
+      }
+      100%{
+        clip: rect(0px,396px,447px,386px);
+      }
+    }
+    .out img{
+      z-index: 20;
+    }
+  .out a{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 374px;
+    height: 427px;
+    margin-left: -187px;
+    text-decoration: none;
+    vertical-align: middle;
+    padding-top: 180px;
+    font-size: 19px;
+    background-color: #ddd;
+    opacity: 0.8;
+  }
+  .out .inner:hover + a{
+    display: inline-block;
+
+  }
+  .out a:hover{
+    display: inline-block;
+  }
 </style>
