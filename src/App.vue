@@ -25,7 +25,7 @@
 
       </div>
 
-      <span id="bg_music" v-on:click="stop">
+      <span id="bg_music" @click="stop">
               <img src="static/qin.png">
              <audio src="static/Sunshine.mp3" autoplay="autoplay" id="audio"></audio>
       </span>
@@ -144,7 +144,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
   #app .navbar-default{
     background: rgba(255,255,255,.3);

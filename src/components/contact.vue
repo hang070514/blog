@@ -15,7 +15,7 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
   .phone,.email,.address{
     height: 100px;
     line-height: 100px;

@@ -1,21 +1,18 @@
 <template>
   <div class="picture">
-    <ul class="list">
-      <li><img class="img-responsive center-block" src="../../static/banner_1.jpg"></li>
-      <li><img class="img-responsive center-block" src="../../static/banner_2.jpg"></li>
-      <li><img class="img-responsive center-block" src="../../static/banner_3.jpg"></li>
-    </ul>
-    <div class="row desc">
-      <span v-for="(k,index) in new Array(3)" @click="dian(index)"></span>
-    </div>
+    <div id="gallery" class="fullscreen"></div>
+ <!--   <div id="nav" class="navbar">
+      <button id="preview">&lt; 前一张</button>
+      <button id="next">下一张 &gt;</button>
+    </div>-->
   </div>
 </template>
 
 
 <script>
-
+import polaroidGallery from '../assets/js/polaroid-gallery'
 export default {
-  name: 'picture',
+  name: 'pic',
   data () {
     return {
       timer:null,
@@ -26,10 +23,11 @@ export default {
       imgArr:[]
     }
   },
-  mounted:function(){
-    this.init();
+  mounted(){
+    new polaroidGallery("../assets/data.json");
+/*    this.init();
     this.play();
-    this.resize();
+    this.resize();*/
   },
   methods:{
       resize(){
@@ -82,50 +80,69 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style >
     .picture {
       position: relative;
-      height: 313px;
-      overflow: hidden;
+   /*   height: 313px;
+      overflow: hidden;*/
   }
-   @media  screen and (min-width: 1200px){
-     .picture{
-       width: 1200px;
-     }
-   }
-  .list{
-    position: absolute;
-    width: 1200px;
-    left: 0px;
-    height: 313px;
-    list-style: none;
-    padding: 0px;
-    margin-bottom: 0px;
-    transition: all .8s ease;
-  }
-  li{
-    float: left;
-  }
-  .desc{
-    position: absolute;
-    left: 0px;
-    bottom: 3px;
-    height: 15px;
+
+</style>
+<style>
+  .fullscreen {
     width: 100%;
-    text-align: center;
-    line-height: 15px;
-    vertical-align: middle;
+    height: 100%;
+    /*overflow: hidden;*/
+    margin: 0;
+    padding: 0;
   }
-  .desc span{
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius:10px;
-    margin-left: 3px;
-    background-color: #fff;
+  figure {
+    width: 200px;
+    position: absolute;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    transition: all 0.6s;
     cursor: pointer;
   }
-  .desc .active{
-    background-color: red;
+
+  figure img {
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+
+  figure figcaption {
+    font-family: Comic Sans, Comic Sans MS, cursive;
+    color: #8F8476;
+  }
+
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    z-index: 999;
+  }
+
+  button {
+    background-color: transparent;
+    padding: 10px 24px;
+    color: #ffffff;
+    border: 2px solid black;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    transition: 0.4s;
+  }
+
+  button:hover {
+    background-color: #f44336;
+    color: white;
   }
 </style>
