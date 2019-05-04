@@ -16,14 +16,9 @@
 	}
 </script>
 <style type="text/css">
-	#out{
-			position: absolute;
-			width: 381px;
-			left: 300px;
-			top:200px;
-		}
 		.out{
       position: relative;
+      margin-top: 50px;
 		}
     .out .inner{
       position: relative;

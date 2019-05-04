@@ -16,6 +16,9 @@
 </template>
 
 <style scoped>
+  .container{
+    margin-top: 50px;
+  }
   .phone,.email,.address{
     height: 100px;
     line-height: 100px;

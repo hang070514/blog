@@ -158,7 +158,7 @@ export default {
   @media screen and (min-width: 1200px){
     #app .content {
       width: 1200px;
-      margin: 150px auto 0px;
+      margin: 0 auto;
     }
   }
  #app .container .header ul{

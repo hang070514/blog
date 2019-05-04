@@ -121,16 +121,6 @@ export default {
     color: #8F8476;
   }
 
-  .navbar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    background-color: black;
-    z-index: 999;
-  }
-
   button {
     background-color: transparent;
     padding: 10px 24px;

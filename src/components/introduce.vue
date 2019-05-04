@@ -51,6 +51,9 @@
 </script>
 
 <style type="text/css">
+  .introduce{
+    margin-top: 50px;
+  }
 	.text{
 		font-size: 20px;
 	}
