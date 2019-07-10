@@ -8,7 +8,7 @@
       <span>一路聊 最智能的即时翻译聊天工具</span>
     </a>
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-      <img  src="../assets/img/duo.jpg" alt="一路聊 最智能的即时翻译聊天工具">
+      <img  src="../assets/img/duo.jpg" alt="多多代账">
     </div>
   </div>
 </template>
