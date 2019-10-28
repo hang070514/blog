@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <div class="navbar navbar-default" role="navigation">
+    <nav class="navbar-fixed-top">
+      <div class="navbar navbar-default" role="navigation">
       <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -15,11 +16,11 @@
 
           <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
                 <ul class="nav navbar-nav">
-                     <li class="active"><router-link to='/'>主页</router-link></li>
-                     <li><router-link to='/picture'>图片欣赏</router-link></li>
-                     <li><router-link to='/project'>项目展示</router-link></li>
-                     <li><router-link to='/introduce'>个人介绍</router-link></li>
-                     <li><router-link to='/contact'>联系我</router-link></li>
+                     <li @click="toggleNav" class="active"><router-link to='/'>主页</router-link></li>
+                     <li @click="toggleNav"><router-link to='/picture'>图片欣赏</router-link></li>
+                     <li @click="toggleNav"><router-link to='/project'>项目展示</router-link></li>
+                     <li @click="toggleNav"><router-link to='/introduce'>读书感悟</router-link></li>
+                     <li @click="toggleNav"><router-link to='/contact'>联系我</router-link></li>
                 </ul>
           </div>
 
@@ -30,6 +31,7 @@
              <audio src="static/Sunshine.mp3" autoplay="autoplay" id="audio"></audio>
       </span>
     </div>
+    </nav>
     <div class="content">
       <router-view></router-view>
     </div>
